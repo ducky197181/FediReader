@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FediReader 2</title>
+    <meta name="viewport" content="width=375px"/>
+<script defer src="bundle.js"></script></head>
+
+<template id="article_template">
+    <article>
+        <div class="status_action">
+            <button title="Block posts from this user" class="icon block">Block user</button>
+            <button title="Hide this post" class="icon delete">Hide post</button>
+            <button title="Boost this post" class="icon share">Boost post</button>
+            <button title="Follow user" class="icon follow">Follow user</button>
+            <button title="Star this post" class="icon star">Star post</button>
+            <a title="Open post in new window" target="_blank" class="icon open">Open link</a>
+        </div>
+        <div class="margin">
+
+            <div class="status_info">
+                <a class="status_name" target="_blank">
+                    <span class="status_avatar_block">
+                        <img class="status_origin">
+                        <img class="status_avatar">
+                    </span>
+                    <span class="status_name_block">
+                        <strong class="display_name">Display name</strong><br>
+                        <span class="account">Account</span>
+                    </span>
+                </a>
+            </div>
+            <div class="status_body"></div>
+            <div class="status_media"></div>
+            
+            <div class="debug"></div>
+        </div>
+    </article>
+</template>
+
+<template id="article_action">
+    <div class="status_action">
+        <button title="Block posts from this user" class="icon block">Block user</button>
+        <button title="Hide this post" class="icon delete">Hide post</button>
+        <button title="Boost this post" class="icon share">Boost post</button>
+        <button title="Star this post" class="icon star">Star post</button>
+    </div>
+</template>
+
+<template id="video_element_template">
+    <video controls autoplay>
+        <source />
+    </video>
+</template>
+
+<template id="template_serverlist">
+    <div class="display-flex serverlist">
+        <a style="flex: 2" target="_blank">
+            <img class="servericon avatar">
+            <span class="servername"></span>
+        </a>
+        <button class="icon token" style="flex:1">Add token</button>
+        <button class="icon delete"  style="flex:1">Delete server</button>
+    </div>
+</template>
+
+<template id="template_addserver">
+    <div class="display-flex">
+        <button onclick="fr.AddServer()" dialog style="flex:2">Add server</button>
+        <button class="icon token" style="flex:1">Add token</button>
+        <button class="icon delete"  style="flex:1">Delete server</button>
+    </div>
+</template>
+
+<body style="background-color: rgb(25, 27, 34);">
+
+    <div class="centercontent">
+        <div class="flex">
+            <div id="UI">
+                <a class="needstoken" title="See popular posts from instances" href="./#home">
+                    <div>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a class="column-link column-link--transparent" title="See popular posts from instances" href="./#explore">
+                    <div>
+                        <span>Explore</span>
+                    </div>
+                </a>
+                <a class="column-link column-link--transparent" title="See the local timeline of instances" href="./#local">
+                    <div>
+                        <span>Local</span>
+                    </div>
+                </a>
+                <a class="column-link column-link--transparent" title="Go out and brave the sea" href="./#adventure">
+                    <div>
+                        <span>Adventure</span>
+                    </div>
+                </a>
+            </div>
+
+            <section id="Preferences">
+
+                <section id="Filtering">
+                    <h3>Content visibility</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="ViewMode">Media visibility</label>
+                            </td>
+                            <td>
+                                <select name="ViewMode">
+                                    <option>Blur Avatars and Media previews</option>
+                                    <option>Blur media tagged NSFW</option>
+                                    <option>Display all media</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="ContentWarning">Content warning</label>
+                            </td>
+                            <td>
+                                <select name="ContentWarning">
+                                    <option>Hide posts with content warning</option>
+                                    <option>Show content warning and toggle to open</option>
+                                    <option>Show all posts unfiltered</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section id="Sources" class="PreferenceSource">
+                    <h3>Mastodon sources</h3>
+                    <button onclick="fr.AddServer()">Add server</button>
+                    <div id="MastodonSources"></div>
+                </section>
+            </section>
+
+            <main id="Main"></main>
+            
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,483 @@
+body {
+    background-color: rgb(25, 27, 34);
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-rendering: optimizelegibility;
+}
+
+body > section
+{
+    position:fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0,0,0,0.8);
+    z-index: 20;
+    
+}
+
+#Main {
+    min-width: 375px;
+}
+
+.centercontent
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (pointer: coarse)
+{
+
+}
+
+.flex
+{
+    max-width: min(580px, 100vw);
+
+    
+}
+
+.avatar
+{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+main article
+{
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+    height: auto;
+    
+}
+
+main article {
+    background-color: rgb(40, 44, 55);
+    margin:0  0 10px;
+    break-inside: avoid;
+    border-radius: 2px;
+    border-width: 0 0 0 3px;
+}
+
+main article .status_name img
+{
+    width: 46px;
+    height: 46px;
+}
+
+main article a
+{
+    color: rgb(140, 141, 255);
+}
+
+
+
+
+main article[data-seen="true"]
+{
+
+}
+
+article img, article canvas {
+    width: 100%;
+    object-fit: contain;
+}
+
+article header {
+    display: flow-root;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 0 0 1px;
+    padding: 0 0 8px;
+    position: relative;
+    height: 20px;
+}
+
+article header img
+{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+}
+
+article header a, article header button {
+    float: right;
+}
+
+article textarea
+{
+    width: calc(100% - 10px);
+    resize: vertical;
+}
+
+
+
+#Header
+{
+    display: flow-root;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+#MastodonSources
+{
+    display: flow-root;
+    > button
+    {
+        display: block;
+        padding: 5px 10px 5px;
+        float: left;
+        border-radius: 20px;
+        font-family: monospace;
+        cursor: pointer;
+        border-style: none;
+        
+    }
+}
+
+
+
+span.source
+{
+    display: block;
+    float: left;
+    background-color: brown;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+
+.serverlist a * {
+    vertical-align: middle;
+}
+
+.serverlist a {
+    color:#8c8dff;
+    text-decoration: none;
+    width: 50%;
+}
+
+.serverlist a span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: calc(100% - 80px);
+}
+
+
+
+
+
+body.home a[href='./#home'], body.explore a[href='./#explore'], body.local a[href='./#local'], body.adventure a[href='./#adventure'] {
+    background-color: rgb(40, 44, 55);
+}
+
+.display-flex
+{
+    display: flex;
+}
+.flex-auto
+{
+    flex: auto;
+}
+
+.PreferenceSource {
+    position: relative;
+
+    > button:first-of-type
+    {
+        display: block;
+        width: calc(100% - 10px);
+        height: 50px;
+        margin: 5px;
+        color: rgb(140, 141, 255);
+        background-color: rgba(0,0,0,0.2);
+        border-color: rgba(0,0,0,0.5);
+        border-style: solid;
+        border-width: 1px;
+        cursor: pointer;
+    }
+}
+
+button {
+    border-collapse: collapse;
+}
+
+#MastodonSources {
+    clear:both;
+    > div {
+        padding: 5px;
+        border-width: 1px 0 0 0;
+        border-style: solid;
+        border-color: rgba(0,0,0,0.5);
+    }
+    span {
+        justify-content: center;
+    }
+    span > * {
+        vertical-align: middle;
+        text-align: center;
+    }
+    button {
+        color: rgb(140, 141, 255);
+        background-color: rgba(0,0,0,0.2);
+        border-color: rgba(0,0,0,0.5);
+        border-style: solid;
+        border-width: 1px 1px 1px 0;
+        cursor: pointer;
+    }
+    button:first-of-type
+        {
+            border-width: 1px;
+        }
+}
+
+
+#UI
+{
+    display: flow-root;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color:#191b22;
+    a {
+        display: block;
+        height: 60px;
+        flex: auto;
+        border-color: white;
+        border-radius: 5px;
+        margin: 5px;
+        color: rgb(217, 225, 232);
+        text-decoration: none;
+        position: relative;
+        justify-content: center;
+        font-size: 16px;
+        
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    a:active
+    {
+        color: #8c8dff;
+    }
+}
+
+.margin {
+    margin: 10px;
+}
+
+article.reblog
+{
+    > .status_action {
+        display: none;
+    }
+}
+
+img:not([src])
+{
+    display: none;
+}
+
+article
+{
+    article
+    {
+        margin: 10px 0 0;
+        background-color: rgba(0,0,0,0.2);
+        border-color: rgba(0,0,0,0.5);
+        border-style: solid;
+        border-width: 0px;
+    }
+    .debug {
+        display: none;
+    }
+    .status_action {
+        display: flex;
+
+        .icon {
+            flex:auto;
+            width: 60px;
+            height: 48px;
+            overflow: hidden;
+            text-indent: -100000px;
+            background-color: rgba(0,0,0,0.2);
+            border-color: rgba(0,0,0,0.5);
+            background-size: 20px;
+            background-image: url(./images/person_remove_FILL0_wght400_GRAD0_opsz40.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            border-style: solid;
+            border-spacing: 0;
+            border-width: 1px 1px 1px 0;
+            cursor: pointer;
+            float: right;
+            
+        }
+        .icon:nth-child(1) {
+            border-width: 1px;
+        }
+
+        .icon.delete {
+            background-image: url(./images/delete_FILL0_wght400_GRAD0_opsz40.svg);
+        }
+
+        .icon.share {
+            background-image: url(./images/ios_share_FILL0_wght400_GRAD0_opsz40.svg);
+            display: none;
+        }
+
+        .icon.follow {
+            background-image: url(./images/person_add_FILL0_wght400_GRAD0_opsz40.svg);
+            display: none;
+        }
+
+        .icon.star {
+            background-image: url(./images/star_FILL0_wght400_GRAD0_opsz40.svg);
+            display: none;
+        }
+
+        .icon.open {
+            background-image: url(./images/open_in_new_FILL0_wght400_GRAD0_opsz40.svg);
+        }
+    }
+    .status_info {
+        margin: 0 0 10px;
+        border-color: rgba(91, 105, 167, 0.5);
+        border-style: solid;
+        border-width: 0 0 1px;
+        position: relative;
+        
+
+        .status_origin {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .status_name {
+            display: table-row;
+            text-decoration: none;
+            > span {
+                display: table-cell;
+                vertical-align: middle;
+                padding-right: 10px;
+            }
+            .status_avatar_block {
+                overflow: hidden;
+                width: 30px;
+                height: 30px;
+            }
+        }
+        
+        .display_name {
+            color: white;
+        }
+        .account {
+            color: rgba(255,255,255,0.5);
+        }
+        .origin_url {
+            font-size: smaller;
+            float: right;
+            color: rgba(255,255,255,0.3);
+        }
+    }
+    .status_media {
+        background-color: rgba(0,0,0,0.4);
+        display: flexbox;
+        
+    }
+    .status_media a img {
+        border-width: 1px;
+        border-style: solid;
+        box-sizing:border-box;
+        vertical-align: bottom;
+    }
+    .status_media.num1 {
+        //display: flex;
+    }
+    .status_media.num2 {
+        display: flex;
+    }
+    .status_media.num3 {
+        display: flex;
+    }
+    .status_media.num4 {
+        display: flex;
+    }
+}
+
+#Main > button {
+    color: rgb(140, 141, 255);
+    background-color: rgba(0,0,0,0.2);
+    border-color: rgba(0,0,0,0.5);
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+#Preferences {
+    min-width: 375px;
+    select {
+        width: 100%
+    }
+
+    > section
+    {
+        background-color: rgb(40, 44, 55);
+        padding: 10px;
+        margin: 0 0 10px;
+        break-inside: avoid;
+        border-radius: 2px;
+        border-width: 0 0 0 3px;
+    }
+}
+
+.settings {
+    #Preferences {
+        display: block;
+    }
+    #Main {
+        display: none;
+    }
+}
+
+#Filtering {
+    display: none;   
+    tr > td:first-of-type {
+        width: 33%;
+    }
+}
+
+.needstoken {
+    display: none !important;
+}
+
+.hastoken {
+    .needstoken, .icon.share, .icon.follow, .icon.star {
+        display: block !important;
+    }
+}
